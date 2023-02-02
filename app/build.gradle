@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.GenialQuirk.TaskMe'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.GenialQuirk.TaskMe"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.7.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.1'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1'
+    implementation 'androidx.navigation:navigation-fragment:2.4.1'
+    implementation 'androidx.navigation:navigation-ui:2.4.1'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+
+    // Dependency for Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+    // Dependencies for the REST API example
+    implementation 'com.google.api-client:google-api-client:1.30.5'
+    implementation 'com.google.api-client:google-api-client-android:1.30.5'
+    implementation 'com.google.apis:google-api-services-people:v1-rev99-1.22.0'
+
+    // UiAutomatorTesting
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.uiautomator:uiautomator:2.2.0'
+    androidTestImplementation 'androidx.annotation:annotation:1.1.0'
+
+    implementation "androidx.work:work-runtime:2.7.1"
+    // https://developers.google.com/gsuite/guides/android
+    // https://mvnrepository.com/artifact/com.google.api-client/google-api-client-android
+    implementation('com.google.api-client:google-api-client-android:1.28.0') {
+        exclude module: 'guava-jdk5'
+    }
+    // https://mvnrepository.com/artifact/com.google.apis/google-api-services-sheets
+    implementation('com.google.apis:google-api-services-sheets:v4-rev571-1.25.0') {
+        exclude module: 'guava-jdk5'
+    }
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
+    // For developers using AndroidX in their applications
+    implementation 'pub.devrel:easypermissions:3.0.0'
+
+    // For developers using the Android Support Library
+    implementation 'pub.devrel:easypermissions:2.0.1'
+}

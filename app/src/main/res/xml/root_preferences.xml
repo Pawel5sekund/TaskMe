@@ -1,0 +1,30 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory android:title="Twoje dane">
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="me_spreadsheetLink"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Link do spreadsheet"
+            app:enableCopying="true"
+            app:enabled="true"
+            app:persistent="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Dane drugiej osoby">
+
+        <EditTextPreference
+            android:defaultValue="Default value"
+            android:key="u_spreadsheetLink"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="Link do spreadsheet"
+            app:enableCopying="true"
+            app:enabled="true"
+            app:persistent="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>
